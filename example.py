@@ -19,12 +19,22 @@ class BankAccount:
                 return f"available balance:{self.balance}"
         except (ValueError,TypeError) as e:
             return str(e)
- 
-       
-a1=BankAccount("nani","A101",2000)
-print(a1.check_balance())
-print(a1.credit_ammount(1000))
-print(a1.check_balance())
-print(a1.debit_amount(1000))
-print(a1.check_balance())
-print(a1.debit_amount(3000))    
+
+a1=BankAccount("Nani","A101",5000)
+print("Available services:\n 1.check balance\n 2.Deposit\n 3.withdraw")
+service=input("How can i help you!: ")
+services_list=["check balance","Deposit","withdraw"]
+try:
+    if service not in services_list:
+        raise ValueError("Service Not Available")
+    elif service=="check balance":
+        print(a1.balance())
+    elif service=="Deposit":
+        value=int(input("Enter Amount: "))
+        print(a1.credit_ammount(value))
+    elif service=="withdraw":
+            value=int(input("Enter Amount: "))
+            print(a1.debit_amount(value))
+except (ValueError,TypeError) as e:
+    print(str(e))
+        
