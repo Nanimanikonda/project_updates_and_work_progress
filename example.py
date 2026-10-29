@@ -16,7 +16,7 @@ class BankAccount:
                 raise ValueError("Insufficient Balance")
             else:
                 self.balance-=d_amount
-                return f"available balance:{self.balance}"
+                return f"succesful! available balance:{self.balance}"
         except (ValueError,TypeError) as e:
             return str(e)
 
