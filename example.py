@@ -36,5 +36,4 @@ try:
             value=int(input("Enter Amount: "))
             print(a1.debit_amount(value))
 except (ValueError,TypeError) as e:
-    print(str(e))
-        
+    print(str(e))      
